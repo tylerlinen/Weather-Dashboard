@@ -51,6 +51,8 @@ function getWeather(city) {
       cardTitle.append(cardIcon)
       $("#today").append(card.append(cardBody.append(cardTitle)))
 
+
+      getDates(response.coord.lat, response.coord.lon)
       getUVI(response.coord.lat, response.coord.lon)
       getForecast(city)
     });
@@ -87,8 +89,30 @@ function getUVI(lat, lon) {
     success: function (response) {
       console.log(response.current.uvi)
       var uv = $("<h3>").text(response.current.uvi);
+
       $("#today").append(uv);
 
+      var card2 = $("<div>").addClass("card");
+      var cardBody2 = $("<div>").addClass("card-body");
+      var cardTitle2 = $("<h2>").addClass("card-title");
+
+      $("#forecast").append(card2.append(cardBody2.append(cardTitle2)))
+
+
+    }
+  });
+}
+function getDates(lat, lon) {
+  var APIKey = "e2284c98c4a79fae5fbaee15f0e63c67";
+
+  // Here we are building the URL we need to query the database
+  var queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${APIKey}&units=imperial`;
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+    dataType: "json",
+    success: function (response) {
 
       //Times and Dates
       for (var i = 1; i < 6; i++) {
@@ -111,5 +135,6 @@ function getUVI(lat, lon) {
     }
   });
 }
+
 
 
