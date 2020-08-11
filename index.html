@@ -15,18 +15,25 @@
         <h1>Weather Dashboard</h1>
     </header>
 
-    <form>
-        <h2>Search For a City<input id="citySearch"><button id="searchBtn">Search</button></input></h2>
-    </form>
+    <div class="row">
+        <div class="col-lg-3">
+            <form>
+                <h2>Search For a City<input id="citySearch"><button id="searchBtn">Search</button></input></h2>
+            </form>
 
-    <aside>
-        <div id="cityList"></div>
-    </aside>
-<div id="today"></div>
-<div id="forecast"></div>
+            <aside>
+                <div id="cityList" class="list-group"></div>
+            </aside>
+        </div>
+        <div class="col-lg-9" id="today"></div>
+    </div>
+    <div class="row align-items-start">    
+        <div id="forecast" class="col-sm-2"></div>
+   </div>
 </body>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 <script src="script.js"></script>
+
 </html>
