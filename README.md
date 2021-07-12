@@ -2,7 +2,7 @@
 ![Screen Shot 2020-08-24 at 6 10 42 PM](https://user-images.githubusercontent.com/66691586/125335028-0fe12400-e31a-11eb-8062-991a588a4b1d.png)
 
 
-Weekly weather report by city.
+Weekly forecast by city.
 
 ## Built With
 
